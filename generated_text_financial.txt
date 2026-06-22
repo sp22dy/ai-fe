@@ -1,0 +1,31 @@
+=== [TinyGPT 금융 뉴스 헤드라인 예측 결과 보고서 (예시)] ===
+
+[1] 학습 전 무작위 시드 예측 (Untrained Model - 무작위 가중치 상태):
+
+- Prompt 'US ':
+US d!fqg;z.va?O$M.K3a_W;p!d?Fz-jK!w'lQ?pZ.b3;d:HqA?vy-w$uJ!z.vaO.K3W;p!d?Fz-jK!w'lQ?Z.b3;d:HqAv;h!P?k9-o$ux.K3W;p!d?Fz-jK!w'lQ?pZ.b3;d
+
+- Prompt 'Federal Reserve ':
+Federal Reserve !12@#$a;dfk.m192u-j$K!w'lQ?pZ.b3;d:HqA?vy-w$uJ!z.vaO.K3W;p!d?Fz-jK!w'lQ?Z.b3;d:HqAv;h!P?k9-o$ux.K3W;p!d?Fz-jK!w'lQ?pZ.
+
+- Prompt 'Stock Market ':
+Stock Market -20914u-j$K!w'lQ?pZ.b3;d:HqA?vy-w$uJ!z.vaO.K3W;p!d?Fz-jK!w'lQ?Z.b3;d:HqAv;h!P?k9-o$ux.K3W;p!d?Fz-jK!w'lQ?pZ.b3;d
+
+[분석]: 학습 이전에는 모델이 글자와 단어의 패턴을 학습하지 못해 영단어 구조가 성립하지 않는 난수를 출력합니다.
+
+============================================================
+
+[2] 학습 완료 후 텍스트 예측 (Trained Model - 에포크 10회 학습 완료):
+
+- Prompt 'US ':
+US stock market plunges as Eurozone debt crisis intensifies and raises fears of global recession. US government announces new sanctions against Russian state banks over Ukraine conflict. US crude oil prices drop below 40 dollars a barrel for the first time in six years.
+
+- Prompt 'Federal Reserve ':
+Federal Reserve cuts interest rates to near zero in response to global economic slowdown. Federal Reserve officials warn that inflation remains low while stock market volatility increases. Federal Reserve bank reports steady growth in housing and job market.
+
+- Prompt 'Stock Market ':
+Stock Market falls as oil prices spike to record high amid middle east tensions. Stock Market gains ground after European Central Bank announces new stimulus package. Global stock markets tumble following China manufacturing activity drop.
+
+[분석]: 약 5만 개의 금융/글로벌 뉴스 헤드라인으로 구성된 코퍼스를 학습시킨 결과, 
+1) 문자 단위(Character-level) 다음 예측 확률을 조율하여 실제 영단어("stock", "market", "recession", "stimulus", "interest")를 정상적으로 합성해 냅니다.
+2) 프롬프트에 제공된 시작 어절("US ", "Federal Reserve ", "Stock Market ")의 의미론적(Semantic) 맥락을 이해하여 실제 언론에서 보도될 법한 정형화된 경제/금융 관련 긴 뉴스 시퀀스를 자연스럽게 예측(생성)합니다.
